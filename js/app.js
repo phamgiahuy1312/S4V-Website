@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("Aug 10, 2021 15:37:25").getTime();
+var countDownDate = new Date("Aug 5, 2023 23:43:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -23,7 +23,8 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "Hết Hạng";
+    document.getElementById("demo").style.color = "red";
   }
 }, 1000);
 
