@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4V</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resetcss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+
+    <!-- icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+      .container .content{
+        padding: 40px 70px;
+        /* text-align: center; */
+      }
+      .container .content .progress-container{
+        margin-bottom: 50px; 
+        
+      }
+      .container .content .progress-container .progress-multiple {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .container .content .progress-container .progress-multiple::before{
+        content: "";
+        background: rgb(153, 148, 148);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 100%;
+        z-index: -1;
+        transition: 0.4 ease;
+      }
+      .container .content .progress-container .progress-multiple .progress-t{
+        background: rgb(38, 224, 13);;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 0%;
+        z-index: -1;
+        transition: 0.4 ease;
+      }
+      .container .content .progress-container .progress-multiple .circle{
+        background-color: #fff;
+        color: #999;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border: 3px solid rgb(153, 148, 148);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4 ease;
+      }
+      .container .content .progress-container .progress-multiple .circle.active{
+        border-color: rgb(38, 224, 13);;
+      }
+      .container .content .bi {
+        font-size: 30px;
+        color: brown;
+      }
+      .container .content .btn-success{
+        width: 120px;
+      }
+      .row{
+          margin-right: -30px;
+          margin-top: -12px;
+        }
+      @media (max-width: 767.98px) {
+        .container .content{
+          padding: 0;
+         
+        }
+        .container .navbar{
+          padding: 0;
+        }
+        .container{
+          overflow-y: scroll;
+        }
+       
+      }
+      .block-move{
+        margin: 15px 0px;
+        margin-bottom: -5px;
+        justify-content:space-between ;
+     }
+      @media (min-width: 992px) { 
+        .block-move{
+        margin: 15px 0px;
+        bottom: 0px;
+        position: absolute;
+        right: 0px;
+        justify-content: space-around;
+        }
+       }
+
+      .btn-choice{
+        width: 150px;
+        height: 70px;
+        background-color: firebrick;
+        /* line-height: 120px; */
+        text-align: center;
+      }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+      <!--start header-->
+      <nav class="navbar navbar-expand-lg navbar-light " id="navbar">
+        <div class="container-fluid" id="">
+          <div class="logo-s4v">
+            <a class="navbar-brand" href="">
+                <img src="image/logo-S4V.png" alt="logo-img" >
+            </a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: space-around;">
+            <nav class="stroke">
+            <ul class="navbar-nav ">
+              <li class="nav-item " >
+                <a class="nav-link"  href="index.html">Trang chủ</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="list.html">Danh sách</a>
+              <li class="nav-item ">
+                <a class="nav-link" href="charityfund">Ủng hộ</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " href="admin.html" >Liên hệ</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="stroke">
+            <ul class="navbar-nav ">
+              <li class="nav-item ">
+                <a class="nav-link btn-sign-up"  href="register.html">Đăng ký</a>
+              </li>
+            </ul>
+          </nav>
+                <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+      </nav>
+      <!--end header-->
+
+      <!-- content    -->
+      <div class="content">
+          <div class="progress-container">
+            <div class="progress-multiple" id="progress">
+              <div class="progress-t" id="progress-t"></div>
+                <div class="circle active" data-bs-toggle="tooltip" data-bs-placement="top" title="Thông tin cơ bản">
+                  <i class="bi bi-file-earmark-text-fill"></i>
+                </div>
+                <div class="circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Khai báo dịch tễ">
+                  <i class="bi bi-bookmark-heart-fill"></i>
+                </div>
+                <div class="circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tiền sử bệnh án">
+                  <i class="bi bi-file-earmark-medical-fill"></i>
+                </div>
+                <div class="circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Đăng kí">
+                  <i class="bi bi-shield-fill-plus"></i>
+                </div>
+             
+            </div>
+          </div>
+          <div class="content-form row">
+            <div class="col-12 form-step" id="form-step1" style="display: block;">
+              <div class="row">
+                  <div class="col-12 row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 col-12">
+                      <label >Họ và tên</label>
+                      <input type="text" class="form-control" placeholder="Họ và tên">
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Ngày sinh</label>
+                      <input type="date" class="form-control" placeholder="Ngày sinh">
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Giới tính</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected disabled>Giới tính</option>
+                        <option value="1">Nam</option>
+                        <option value="2">Nữ</option>
+                        <option value="3">Khác</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 col-12">
+                      <label for="">Số CMND/CCCD/HC</label>
+                      <input type="text" class="form-control" placeholder="Số CMND/CCCD/HC">
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Mã số BHYT</label>
+                      <input type="text" class="form-control" placeholder="Mã số BHYT">
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Ngày muốn được tiêm (dự kiến)</label>
+                      <input type="date" class="form-control" placeholder="Ngày/tháng/năm">
+                    </div>
+                  </div>
+                  <div class="col-12 row" style="margin-bottom: 10px;">
+                    <div class="col-md-4 col-12">
+                      <label for="">Quốc tịch</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected >Việt Nam</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Quận</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected >Hải Châu</option>
+                        <option value="1">Ngủ Hành Sơn</option>
+                        <option value="2">Liên Chiểu</option>
+                        <option value="3">Thanh Khê</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 col-12">
+                      <label for="">Đối tượng ưu tiên</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected >Đẹp trai</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 row" style="margin-bottom: 10px;">
+                    <div class="col-12">
+                      <label for="">Địa chỉ </label>
+                      <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12 form-step" id="form-step2" style="display: none;">
+              <div class="row">
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  <div class="col-6">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Triệu chứng</th>
+                          <th scope="col">Có</th>
+                          <th scope="col">Không</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Sốt</td>
+                          <td> <input type="radio" name="s1" id=""></td>
+                          <td> <input type="radio" name="s1" id=""></td>
+                        </tr>
+                        <tr>
+                          <td>Ho</td>
+                          <td> <input type="radio" name="s2" id=""></td>
+                          <td> <input type="radio" name="s2" id=""></td>
+                        </tr>
+                        <tr>
+                          <td >Khó thở</td>
+                          <td> <input type="radio" name="s3" id=""></td>
+                          <td> <input type="radio" name="s3" id=""></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-6">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Triệu chứng</th>
+                          <th scope="col">Có</th>
+                          <th scope="col">Không</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Đau họng</td>
+                          <td> <input type="radio" name="s4" id=""></td>
+                          <td> <input type="radio" name="s4" id=""></td>
+                        </tr>
+                        <tr>
+                          <td>Buồn nôn</td>
+                          <td> <input type="radio" name="s5" id=""></td>
+                          <td> <input type="radio" name="s5" id=""></td>
+                        </tr>
+                        <tr>
+                          <td >Tiêu chảy</td>
+                          <td> <input type="radio" name="s6" id=""></td>
+                          <td> <input type="radio" name="s6" id=""></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  
+                  <div class="col-md-4 col-12">
+                    <label for="">Tiếp xúc gần với các F0/F1/F2</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected disabled>Có/Không</option>
+                    <option value="1">Có</option>
+                    <option value="2">Không</option>
+                  </select>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <label for="">Số điện thoại</label>
+                    <input type="text" class="form-control" placeholder="Số điện thoại">
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+            <div class="col-12 form-step" id="form-step3" style="display: none;">
+              <div class="row">
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  <div class="col-md-4 col-12">
+                    <label for="">Dị ứng</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected disabled>Dị ứng</option>
+                      <option value="1">Có </option>
+                      <option value="2">Không</option>
+                    </select>
+                  </div>
+                  <div class="col-md-8 col-12">
+                    <label for="">Các loại dị ứng</label>
+                    <input type="text" class="form-control" placeholder="Nếu không để trống">
+                  </div>
+                 
+                </div>
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  <div class="col-md-12 col-12">
+                    <label for="">Lịch sử bệnh (bệnh án)</label>
+                    <div class="form-floating">
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                      <label for="floatingTextarea">Bệnh án</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  <div class="col-md-4 col-12">
+                    <label for="">Nhóm máu</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected >Nhóm máu</option>
+                      <option value="">A</option>
+                      <option value="">B</option>
+                      <option value="">AB</option>
+                      <option value="">O</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <label for="">Đang làm nhiệm vụ phòng chống dịch</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected >Có</option>
+                      <option value="1">Không</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <label for="">Bạn có muốn tiêm vắc xin?</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected >Có</option>
+                      <option selected >Không</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 row" style="margin-bottom: 10px;">
+                  <div class="col-12">
+                    <label for="">Các loại vắc xin đã tiêm</label>
+                    <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 form-step" id="form-step4" style="display: none;">
+              <div class="row">
+                  <div class="col-12" style="padding-left: 0px; margin-bottom: 10px;">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Đăng kí xét nghiệm covid 19
+                          </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Đăng kí tiêm vắc xin covid 19
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Những điều cần biết về phòng chống covid và vắc xin 
+                          </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <label for="">Đăng kí</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option id="xn">Xét nghiệm covid 19</option>
+                      <option id="vx">Tiêm vắc xin</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <label for="">Ngày mong muốn</label>
+                    <input type="date" class="form-control" placeholder="Ngày mong muốn">
+                  </div>
+                 
+              
+                  
+              </div>
+            </div>
+          </div>
+          <div class="col-12 block-move" style="padding: 0;display: flex; ">
+            <button type="submit" class="btn btn-success" id="prev" disabled>Quay lại</button>
+           
+              <button type="submit" class="btn btn-success" id="next" >
+                Tiếp theo
+              </button>
+            
+            
+          </div>
+
+
+          <!-- Modal -->
+        <!-- Modal -->
+     
+          
+      </div>
+    </div>
+
+    <script>
+      const progress = document.getElementById("progress-t");
+      const prev = document.getElementById("prev");
+      const next =document.getElementById("next");
+      const circles = document.querySelectorAll(".circle");
+
+      // const vacxin = document.getElementById("vx");
+      // const xetnghiem =document.getElementById("xn");
+      // const nextpage=document.getElementById("nextpage");
+      
+      let currentActive =1;
+
+      next.addEventListener("click", ()=>{
+        currentActive++;
+        
+        if(currentActive > circles.length){
+          currentActive = circles.length;
+          window.location="list.html";
+        }
+        update();
+      });
+
+      prev.addEventListener("click", ()=>{
+        currentActive--;
+        
+        if(currentActive < 1){
+          currentActive = 1;
+        }
+        update();
+      });
+      
+      function update(){
+        circles.forEach((circle, idx) =>{
+          if(idx < currentActive){
+            circle.classList.add("active");
+          }
+          else{
+            circle.classList.remove("active");
+          }
+        });
+        
+        const actives = document.querySelectorAll(".active");
+        progress.style.width =((actives.length -1 )/( circles.length -1))*100+"%";
+
+        if(currentActive === 1){
+          prev.disabled = true;
+        }
+        else if( currentActive === circles.length){
+          next.disabled = true;
+        }
+        else{
+          next.disabled = false;
+          prev.disabled = false;
+        }
+        document.getElementById("form-step1").style.display = "none";
+        document.getElementById("form-step2").style.display = "none";
+        document.getElementById("form-step3").style.display = "none";
+        document.getElementById("form-step4").style.display = "none";
+
+        if(currentActive === 1){
+          document.getElementById("form-step1").style.display = "block";
+        }
+        if(currentActive === 2){
+          document.getElementById("form-step2").style.display = "block";
+        }
+        if(currentActive === 3){
+          document.getElementById("form-step3").style.display = "block";
+        }
+        if(currentActive === 4){
+          document.getElementById("form-step4").style.display = "block";
+          next.disabled = false;
+          next.innerHTML ="Xác nhận";
+          next.style.backgroundColor = "blue";
+          
+
+        }
+        else{
+          next.innerHTML = "Tiếp theo";
+          next.style.backgroundColor = "#28a745";
+        }
+
+      }
+      
+    
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+
+    </script>
+
+  
+</body>
+</html>

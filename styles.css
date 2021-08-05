@@ -1,0 +1,420 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: ArvoTitle;
+    src: url(/font/Arvo/Arvo-Bold.ttf);
+}
+@font-face {
+    font-family: ArvoDesc;
+    src: url(/font/Arvo/Arvo-Regular.ttf);
+}
+ a,p{
+     font-family: ArvoDesc;
+ }
+ .nav-item a{
+     font-size: 20px;
+ }
+body{
+    background-color: #f0861f !important;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    background
+}
+.container{
+    background: #FFF0DD;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 20px;
+    border: 3px solid black;
+    /* padding: 1% 2%; */
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    /* overflow: hidden; */
+}
+#navbar{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+
+}
+nav.stroke ul li a:hover{
+  color: #f37b03;
+}
+/* stroke */
+nav.stroke ul li a
+ {
+  position: relative;
+  font-weight: bold;
+}
+nav.stroke ul li a:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #f37b03;
+  height: 2px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+.nav-item ~ .nav-item{
+    margin-left: 15px;
+}
+ul li a {
+    font-weight: bold;
+}
+
+.logo-s4v{
+    width: 150px;
+    height: 110px;
+}
+.logo-s4v img{
+    width: 100%;
+    height: 100%;
+}
+ 
+
+
+
+
+/*BODY*/
+
+.body{
+    position: relative;
+    top: 10;
+    right: 0;
+    left: 0;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    padding: 10px 30px;
+    /* margin: 0px 10px; */
+    /* z-index: 1; */
+}
+
+.slider{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(187, 3, 3); */
+    
+}
+.slider-content{
+    display: flex;
+    position: relative;
+    padding-bottom: 100px;
+}
+.vac-info ,.vac-img{
+    width: 50% !important;
+    position: relative;
+}
+
+/*------CSS Vaccine info-------*/
+.vac-info{
+    padding-left: 20px;
+}
+.vac-name{
+    width: max-content;
+}
+.vac-name,
+.vac-desc {
+    overflow: hidden;
+}
+.vac-name h1{
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0px;
+    font-family: Arvo;
+    width: max-content;
+}
+.vac-desc > p{
+    font-family: ArvoDesc;
+    font-size: 19px;
+    text-align: justify;
+}
+.btn-read{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    width: 140px;
+    padding: 6px 10px;
+    border-radius: 40px;
+    background-color: #7b108c;
+    font-family: ArvoDesc;
+    font-size: 17px;
+}
+.btn-read:hover {
+    background: #6d037e;
+    color: #fff;
+    text-decoration: none;
+}
+/*------END CSS Vaccine info-------*/
+
+/*------CSS Vaccine IMG-------*/
+.vac-img{
+    height: 400px;
+    width: 400px; 
+    position: relative;
+    justify-content: center;
+    /* margin: 7px 7px 100px 100px; */
+}
+.vac-img > img {
+    /* margin: 7px 7px 100px 100px; */
+    padding-left:178px;
+    /* padding-right: 35px; */
+    position: absolute;
+    width: 70%;
+    height: 90%; 
+    z-index: 1;
+}
+/* .slider-content:nth-child(2) .vac-img {
+   
+} */
+.vac-img .bg-img{
+    height: 390px;
+    width: 350px;
+    border-radius: 24% 76% 67% 33% / 43% 48% 52% 57% ;
+    position: absolute;
+    top: 0;
+    right: 75px;
+    background-color: #7b108c;
+    box-shadow: 13px 7px 11px rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+#border-1 , #btn-read-1{
+    background-color: #7b108c;
+}
+#border-2,#btn-read-2{
+    background-color: #f10000;   
+}
+#border-3,#btn-read-3{
+    background-color: #004b7d;   
+}
+
+
+#btn-read-1:hover{
+    background-color: #ab23c0;
+}
+#btn-read-2:hover{
+    background-color: #f53c3c;   
+}
+#btn-read-3:hover{
+    background-color: #1782c9;   
+
+}
+/*------END CSS Vaccine IMG-------*/
+
+/*----Control vaccine----*/
+.vac-control{
+    display: flex;
+    position: absolute;
+    left: 25%;
+    /* top: 50px; */
+    bottom: 70px;
+    z-index: 98;
+}
+.control-item{
+    width: 40px;
+    height: 90px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.control-item ~ .control-item {
+    margin-left: 40px;
+}
+
+.control-item > img {
+    width: 100%;
+    width: 100%;
+    transition: transform .3s ease-in-out;
+
+}
+.control-item:hover img{
+    transform: translateY(-20px) rotate(10deg);
+    cursor: pointer;
+}
+
+/*----End Control vaccine----*/
+.social-network{
+    position: absolute;
+    bottom: 60px; 
+}
+.social-network > i{
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.fab ~ .fab {
+    margin-left: 20px;
+}
+
+
+
+
+
+@media screen and (max-width: 750px){
+    .container{
+        border: none;
+        border-radius: 0px;
+        height: 100%;
+    }
+    .slider-content , slider{
+        /* display: contents; */
+        flex-direction: column-reverse;
+    }
+    .vac-info , .vac-img{
+        width: unset;
+    }
+}
+
+/* .vac-content{
+    width: 100%;
+    display: flex;
+    margin-left: 50px;
+    
+    inset: 0;
+    
+}
+.slider {
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    display: flex;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+.vac-content .vac-name{
+    display: inline-block;
+}
+.vac-content .vac-name h1{
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0px;
+    font-family: Arvo;
+}
+
+.vac-content .description{
+    text-align: justify; 
+}
+.vac-content .description p{
+    font-family: ArvoDesc;
+    font-size: 19px;
+}
+
+.btn-read{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    width: 140px;
+    
+    padding: 6px 10px;
+    border-radius: 40px;
+    background-color: #7b108c;
+    font-family: ArvoDesc;
+    font-size: 20px;
+}
+.btn-read:hover{
+    background: #6d037e;
+    color: #fff;
+}
+
+
+
+.vac-info ,.vac-img{
+    width: 50%;
+    position: relative;
+    overflow: hidden;    
+}
+.vac-img{
+    
+    left: 70px;
+    height: 400px;
+    width: 400px;
+
+}
+.vac-img > img{
+    position: absolute;
+    width: 100%;
+    height: 100%; */
+    
+  /* margin: auto; */
+/* }
+.vac-content .vac-bg-img{
+    height: 300px;
+    width: 290px;
+    border-radius: 24% 76% 67% 33% / 43% 48% 52% 57% ;
+    position: absolute;
+    top: 34px;
+    right: 65px;
+    background-color: #7b108c;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+
+    z-index: -1;
+}
+.vac-content .vac-img-control{
+    position: absolute;
+    display: flex;
+    left: 30%;
+    bottom: 74px;
+}
+.vac-content .vac-img-control .img-control-item{
+    height: 80px;
+    width: 80px;
+    border-radius: 80%;
+}
+.vac-content .vac-img-control .img-control-item > img{
+    width: 100%;
+    transition: transform .3s ease-in-out;
+}
+.vac-content .vac-img-control .img-control-item:hover > img{
+    transform: translateY(-20px) rotate(10deg);
+    cursor: pointer;
+}
+.social-network{
+    position: absolute;
+    bottom: 80px; 
+}
+.social-network > i{
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+} */
+
+
+
